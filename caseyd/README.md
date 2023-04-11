@@ -18,7 +18,7 @@ Working directory for Casey Dinsmore
 
 ## Kubectl
 
-## Get Proxy Address
+### Get Proxy Address
 
 kubectl -n jhub get service proxy-public
 
