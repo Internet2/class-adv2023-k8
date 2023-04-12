@@ -45,7 +45,7 @@ This will also show the cluster output information
 ## Configure kube for the new cluster
 
 ```
-aws eks update-kubeconfig --name education-eks-pAGhwfz9
+aws eks update-kubeconfig --name <clustername>
 ```
 
 Update kubectl from Terraform output (from the EKS terraform directory)
@@ -53,16 +53,9 @@ Update kubectl from Terraform output (from the EKS terraform directory)
 aws eks update-kubeconfig --name $(terraform output -raw cluster_name)
 ```
 
-## Updating a Cluster
 
-Edit variables.tf and replace cluster_version 1.24 with version 1.25
-```
- terraform apply
-```
 
-AWS will step through and upgrade the cluster to version 1.25
-
-## Deleting a cluster
+## Deleting a terraform deployment
 ```
  terraform destroy
 ```

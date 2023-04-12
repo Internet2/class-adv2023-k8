@@ -19,16 +19,17 @@ Working directory for Casey Dinsmore
 ## Kubectl
 
 ### Get Proxy Address
-
-kubectl -n jhub get service proxy-public
+ kubectl -n jhub get service proxy-public
 
 ### Show all pod states
  kubectl get pods -A
 
 ### View details about a pod including deployment errors
-
  kubectl -n jhub describe pod <pod.name>
 
 ### Get the logs for a pod
-
  kubectl -n jhub get logs <pod.name>
+
+### Examine Persistent Volumes/claims
+ kubectl -n jhub get pv
+ kubectl -n jhub get pvc

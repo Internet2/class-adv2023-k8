@@ -1,4 +1,4 @@
-# Provision your Kubernetes clusters with the Terraform Helm provider
+# Provision JupyterHub in a Kubernetes cluster with the Terraform Helm provider
 
 
 
