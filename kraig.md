@@ -10,16 +10,15 @@ This project was created as part of the Internet2 CLASS Advanced program and sup
 
 ### Personal Goals:
 
-My personal goal is to write my own terraform script to be able to deploy the resources necessary to complete this project.
+My personal goal is to deploy an environment for a scalable jupyterhub using Terraform and AWS.
 
 To Do:
 
-- [x] Deploy a Kubernetes cluster on GCP
+- [x] Deploy a Kubernetes cluster on AWS
 - [x] Create a [README.md](http://README.md) for team github
 - [ ] Install Jupyter notebook to AWS cluster
-- [ ] Register domain with GCP cloud domains
+- [ ] Register domain with Route53
 - [ ] Point Jupyterhub instance to new domain
-- [ ] Setup SSL Certificate
 - [ ] Setup OAuth
 - [ ] Create a Terraform deployment
 - [ ] Upload to GitHub
