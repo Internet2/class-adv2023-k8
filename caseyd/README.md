@@ -3,7 +3,7 @@
 Working directory for Casey Dinsmore
 
 
-# Jupyterhub Common Commands
+# Common Commands
 
 ## Helm
 
@@ -30,6 +30,6 @@ Working directory for Casey Dinsmore
 ### Get the logs for a pod
  kubectl -n jhub get logs <pod.name>
 
-### Examine Persistent Volumes/claims
+### Get Persistent Volumes/Claims
  kubectl -n jhub get pv
  kubectl -n jhub get pvc

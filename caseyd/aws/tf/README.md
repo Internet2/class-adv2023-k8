@@ -1,8 +1,4 @@
 
-# Terraform EKS Example
-https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
-
-
 ## Terraform Commands
 
 ### Install TF Requirements
@@ -61,6 +57,6 @@ aws eks update-kubeconfig --name $(terraform output -raw cluster_name)
 ```
 
 
-## Terraform Helm Example
-
-https://developer.hashicorp.com/terraform/tutorials/kubernetes/helm-provider
+# References
+* [Terraform EKS Example](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks)
+* [Terraform Helm Example](https://developer.hashicorp.com/terraform/tutorials/kubernetes/helm-provider)
