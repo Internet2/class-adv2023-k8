@@ -7,11 +7,13 @@
 5. Learn Github as a collaborative tool!
 
 <h2>Presentation sequence:</h2>
+
 1. Overview of project goals
 2. Demo of AWS deployment using Terraform 
 3. Demo of Azure deployment using Terraform
 4. Demo of GCP deployment using Terraform (maybe unnecessary)
 5. Brief overview of lessons learned re: Security
 6. Brief overview of lessons learned re: Networking
-7. Jupyterhub + NFS (why, how)
-8. Demo of functional Jupyterhub - let's crash the thing and watch it autoscale.
+7. Brief overview of Institutional needs
+8. Jupyterhub + NFS (why, how)
+9. Demo of functional Jupyterhub - let's crash the thing and watch it autoscale.
