@@ -15,5 +15,6 @@
 5. Brief overview of lessons learned re: Security
 6. Brief overview of lessons learned re: Networking
 7. Brief overview of Institutional needs
-8. Jupyterhub + NFS (why, how)
-9. Demo of functional Jupyterhub - let's crash the thing and watch it autoscale.
+8. Cost discussion 
+9. Jupyterhub + NFS (why, how)
+10. Demo of functional Jupyterhub - let's crash the thing and watch it autoscale.
