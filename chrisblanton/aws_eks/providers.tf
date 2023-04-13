@@ -1,6 +1,7 @@
 provider "aws" {
-    shared_config_files = [ "/workspaces/research_devops/secrets/aws-config" ]
-    shared_credentials_files = [ "/workspaces/research_devops/secrets/aws-cred" ]
+    access_key = var.route_key
+    secret_key = var.route_secret
+    region = var.region 
     profile = "default"
 }
 

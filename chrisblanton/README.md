@@ -28,7 +28,7 @@ The code to deploy and manage the Kubernetes deployment of JupyterHub is within 
 
 
 
-
+  
 
 # Tips and Tricks
 
