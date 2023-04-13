@@ -37,3 +37,6 @@ terraform.rc
 .terraform.lock.hcl
 
 secrets.tf 
+
+# Additional files to ignore
+.DS_Store
