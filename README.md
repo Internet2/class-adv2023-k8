@@ -2,7 +2,13 @@
 
 <h2>Overview</h2>
 
-This project will deploy a Jupyterhub with scalable compute nodes (for distributed computing) on 3 cloud platforms using AWS EKS, Azure Kubernetes Service (AKS) and Google Kubernetes Engine (GKE). The goals are to (1) Create a replicable, reusable template for deployment of Jupyterhubs on campuses using Terraform and/or other automation scripts (2) Create documentation around best practices for deploying Jupyterhubs including steps on SSO/OAuth, cost optimization, and other node scaling mechanisms. 
+This project will deploy a Jupyterhub with scalable compute nodes (for distributed computing) on 3 cloud platforms using AWS EKS, Azure Kubernetes Service (AKS) and Google Kubernetes Engine (GKE). There are several learning objectives for this project:
+
+1. Learn how create replicable and reusable templates for deployment of cloud services using Infrastructure-as-Code (IaC), namely Terraform
+2. Understand how to use Kubernetes for container orchestration and scaling of microservices
+3. Understand how to deploy scalable Jupyterhubs (i.e. Jupyterhubs as a service, Jupyterhub for Classroom)
+4. Understand best practices on Jupyterhub deployments including steps on SSO/OAuth, cost optimization, security, networking, and other node scaling mechanisms
+
 
 <h2>Contents</h2>
 
