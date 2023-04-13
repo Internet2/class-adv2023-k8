@@ -10,6 +10,7 @@
 Research faciliation peers
   
 <h2>Key takeaways from the presentation</h2>
+
 1. Terraform is a simple way to deploy cloud services
 2. Lessons learned/considerations when deploying cloud services
 3. Deep dive into Jupyterhub technology for use across multiple use cases 
