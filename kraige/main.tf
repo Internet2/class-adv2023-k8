@@ -1,21 +1,26 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+//Configure the AWS provider and specify the AWS region using the var.region variable.
 provider "aws" {
-  region = var.region    //This block configures the AWS provider and specifies the AWS region using the var.region variable.
+  region = var.region    
 }
 
-data "aws_availability_zones" "available" {} //This block fetches the available AWS availability zones in the specified region.
+//Fetch the available AWS availability zones in the specified region.
+data "aws_availability_zones" "available" {} 
 
+//Define a local variable cluster_name, which will be used to name the EKS cluster.
 locals {
-  cluster_name = "education-eks-${random_string.suffix.result}" //This block defines a local variable cluster_name, which will be used to name the EKS cluster.
+  cluster_name = "education-eks-${random_string.suffix.result}" 
 }
 
+//Create a random string of 8 characters without special characters, which will be used as a suffix for the EKS cluster name.
 resource "random_string" "suffix" {
   length  = 8
   special = false
 }
 
+//Create a VPC using the Terraform AWS VPC module with specified subnets, NAT gateway, and DNS hostname settings.
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "3.19.0"
@@ -43,6 +48,7 @@ module "vpc" {
   }
 }
 
+//Create an EKS cluster using the Terraform AWS EKS module with specified cluster settings and managed node groups.
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.5.1"
@@ -82,12 +88,13 @@ module "eks" {
   }
 }
     
-
+//Obtain the ARN of the Amazon EBS CSI Driver IAM policy.
 # https://aws.amazon.com/blogs/containers/amazon-ebs-csi-driver-is-now-generally-available-in-amazon-eks-add-ons/ 
 data "aws_iam_policy" "ebs_csi_policy" {
   arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
 }
 
+//Add storage management capabilities to the EKS cluster using the previously created role.
 module "irsa-ebs-csi" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
   version = "4.7.0"
@@ -99,6 +106,7 @@ module "irsa-ebs-csi" {
   oidc_fully_qualified_subjects = ["system:serviceaccount:kube-system:ebs-csi-controller-sa"]
 }
 
+//Create a role with the correct permissions to manage storage for the EKS cluster.
 resource "aws_eks_addon" "ebs-csi" {
   cluster_name             = module.eks.cluster_name
   addon_name               = "aws-ebs-csi-driver"
