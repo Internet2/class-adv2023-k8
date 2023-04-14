@@ -1,7 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-
 # Output variables are a way to extract information about the resources that Terraform 
 # manages so that you can use it elsewhere, like in another Terraform configuration or to display it to the user.
 
