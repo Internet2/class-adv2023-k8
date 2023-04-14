@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
-//This block would be used if you were to use Terraform Cloud or some other remote workspace.
     /*cloud {
     workspaces {
       name = "learn-terraform-eks"
     }
   }
+    This block would be used if you were to use Terraform Cloud or some other remote workspace.
   */
     
   required_providers {
