@@ -2,13 +2,13 @@
 # SPDX-License-Identifier: MPL-2.0
 
 provider "aws" {
-  region = var.region
+  region = var.region    //This block configures the AWS provider and specifies the AWS region using the var.region variable.
 }
 
-data "aws_availability_zones" "available" {}
+data "aws_availability_zones" "available" {} //This block fetches the available AWS availability zones in the specified region.
 
 locals {
-  cluster_name = "education-eks-${random_string.suffix.result}"
+  cluster_name = "education-eks-${random_string.suffix.result}" //This block defines a local variable cluster_name, which will be used to name the EKS cluster.
 }
 
 resource "random_string" "suffix" {
