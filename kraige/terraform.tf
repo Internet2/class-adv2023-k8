@@ -42,7 +42,5 @@ terraform {
 - The CloudInit provider (hashicorp/cloudinit) with version constraint `~> 2.2.0`
 
 
-This line sets the required Terraform version for the configuration. It specifies a version constraint of `~> 1.3`, meaning it requires a Terraform version that is compatible with version 1.3, but not necessarily the exact version.
-
-In summary, this configuration file sets up the required providers and their versions and specifies the required Terraform version for the project.
+This configuration file sets up the required providers and their versions and specifies the required Terraform version for the project.
 */
