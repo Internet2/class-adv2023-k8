@@ -1,0 +1,10 @@
+# Private variables that should be kept secret
+
+oauth_client_id     = "<client_id>"
+oauth_client_secret = "<client_secret>"
+fqdn                = "<jupyterhub_fqdn>"
+le_contact_email    = "<email address>"
+
+# The GitHub username should be used and not an e-mail address
+jupyterhub_admins   = ["admin1"]
+jupyterhub_users    = ["user1", "user2"]

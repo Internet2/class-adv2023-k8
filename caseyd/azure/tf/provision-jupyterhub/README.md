@@ -5,6 +5,8 @@
 
 Update `variables.tf` with the k8s namespace, and JupyterHelm chart version.
 
+Copy `jupyterhub.auto.tfvars.example` to `jupyterhub.auto.tfvars` and customize as needed.
+
 Add custom configuration values to `jupyterhub-values.yaml`
 
 ## Deploy with Terraform

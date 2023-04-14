@@ -8,3 +8,57 @@
 # Chart default values:     https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/HEAD/jupyterhub/values.yaml
 # Available chart versions: https://jupyterhub.github.io/helm-chart/
 #
+
+# Enable HTTPS on a custom domain via LetsEncrypt
+proxy:
+ https:
+  enabled: true
+  hosts:
+    - "${fqdn}"
+  letsencrypt:
+    contactEmail: "${le_contact_email}"
+
+# Static IP Attempt - This does not work
+#   service:
+#     loadBalancerIP: "${public_ip}"
+#     annotations:
+#       service.beta.kubernetes.io/azure-load-balancer-reserouce-group: "blessed-clam-rg"
+
+hub:
+  config:
+    Authenticator:
+      admin_users: [${jupyterhub_admins}]
+      allowed_users: [${jupyterhub_users}]
+    GitHubOAuthenticator:
+      client_id: "${oauth_client_id}"
+      client_secret: "${oauth_client_secret}"
+      oauth_callback_url: "https://${fqdn}/hub/oauth_callback"
+    JupyterHub:
+      authenticator_class: github
+
+singleuser:
+  # Default to the new lab view
+  defaultUrl: "/lab"
+  extraEnv:
+    JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+  # Defines the default image
+  image:
+    name: jupyter/datascience-notebook
+    tag: python-3.10
+  profileList:
+    - display_name: "Datascience"
+      description: "Datascience environment with Python 3.10, R, and Julia."
+      kubespawner_override:
+        image: jupyter/datascience-notebook:python-3.10
+        default: true
+    - display_name: "Tensorflow"
+      description: "Tensorflow environment with Python deep learning libraries"
+      kubespawner_override:
+        image: jupyter/tensorflow-notebook:lab-3.6.3
+
+
+
+  # Customize Storage
+  storage:
+    # Cap each user to 5GB
+    capacity: 5Gi
