@@ -25,6 +25,14 @@ output "cluster_ca_certificate" {
   value = azurerm_kubernetes_cluster.default.kube_config.0.cluster_ca_certificate
 }
 
+# Output the public_ip and id for jupyterhub to import
+output "public_ip" {
+  value = azurerm_public_ip.default.ip_address
+}
+output "public_id" {
+  value = azurerm_public_ip.default.id
+}
+
 
 #output "kube_config" {
 #  value = azurerm_kubernetes_cluster.default.kube_config_raw

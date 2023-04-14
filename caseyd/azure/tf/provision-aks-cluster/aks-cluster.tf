@@ -16,6 +16,21 @@ resource "azurerm_resource_group" "default" {
   }
 }
 
+
+# Provision a Public IP Address
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip
+resource "azurerm_public_ip" "default" {
+  name                = "${random_pet.prefix.id}-public_ip1"
+  resource_group_name = azurerm_resource_group.default.name
+  location            = azurerm_resource_group.default.location
+  allocation_method   = "Static"
+  sku                 = "Standard"
+
+  tags = {
+    environment = "Demo"
+  }
+}
+
 resource "azurerm_kubernetes_cluster" "default" {
   name                = "${random_pet.prefix.id}-aks"
   location            = azurerm_resource_group.default.location
@@ -40,5 +55,20 @@ resource "azurerm_kubernetes_cluster" "default" {
 
   tags = {
     environment = "Demo"
+  }
+
+# Experiment with applying the public ip to the AKS network - not working
+#  network_profile {
+#    network_plugin = "azure"
+#    load_balancer_sku = "standard"
+#    load_balancer_profile {
+#      outbound_ip_address_ids = [azurerm_public_ip.default.id]
+#   }
+#  }
+
+  # Automatically run the configure command for kubectl on cluster creation
+  provisioner "local-exec" {
+    command = "az aks get-credentials --resource-group ${azurerm_resource_group.default.name} --name ${azurerm_kubernetes_cluster.default.name}"
+    when = create
   }
 }
