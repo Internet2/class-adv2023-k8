@@ -35,7 +35,7 @@ terraform {
   required_version = "~> 1.3"
 }
 
-/* This block specifies the required providers and their versions for the Terraform configuration. It includes:
+/* The required_providers block specifies the required providers and their versions for the Terraform configuration. It includes:
 - The AWS provider (hashicorp/aws) with version constraint `~> 4.47.0`
 - The Random provider (hashicorp/random) with version constraint `~> 3.4.3`
 - The TLS provider (hashicorp/tls) with version constraint `~> 4.0.4`
