@@ -11,10 +11,17 @@ resource "helm_release" "jupyterhub" {
   cleanup_on_fail   = true
   create_namespace  = true
   namespace         = var.jupyterhub_namespace
+  # Increase the timeout to support large images/slow downloads
+  timeout           = 900
+  wait              = false
 
   values = [
-    file("${path.module}/jupyterhub-values.yaml")
+#    file("${path.module}/jupyterhub-values.yaml")
+# Changing to templatefile so Terraform variables can be passed
+# https://stackoverflow.com/a/64699945
+    templatefile("${path.module}/jupyterhub-values.yaml", {public_ip = "${data.terraform_remote_state.aks.outputs.public_ip}"})
   ]
+
 
 }
 
