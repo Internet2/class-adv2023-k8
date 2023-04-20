@@ -1,0 +1,40 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/hashicorp/azurerm" {
+  version     = "2.66.0"
+  constraints = "2.66.0"
+  hashes = [
+    "h1:jNJ++qf7lwVmhAzLR22YDcAOoqJexzGaXuk2Jo7b+rw=",
+    "zh:0b793e719f68d38bbe02c8b279f241564f74496904a7862429e62e4d37131dc0",
+    "zh:1275363d69e44177294110fb67e1a1ff12c4c01de588ea1f35bc13774518f65e",
+    "zh:17fb07ada43bea6abfd5660a9db9b7ec48d54fcafeeb570386425a87313e8f47",
+    "zh:5343ac329667a0ef3043d46a0f62aa17c6c72027790d50d2be0aead13b27c705",
+    "zh:593718338ada33fbf890cdd7758607925f7aadbd2921ecda64cc4e81df7a13cc",
+    "zh:88332b10f7e1491e07f529991df97c64e34932fb245510abae408018d23fb03d",
+    "zh:8e187cfa3dd7af3e8990a692fea0aeb02aaf85e96d373777138921f77acd633a",
+    "zh:b9511db763b413e1b83dc0ab14b39446d8beae325fba96cc8872897751f28f1a",
+    "zh:d55b847207c0d6cbcea78d87a9ea82160bca16c35a8d793d3ce804e8ed5cf95d",
+    "zh:d90191dbe9e58ce866f616c3b1abc0086d2ed6002de05d72912dd768a10f179f",
+    "zh:e038608b326337fadccf1490ba90bfd18b9b45095b98a516eee1403bb397d48a",
+  ]
+}
+
+provider "registry.terraform.io/hashicorp/random" {
+  version = "3.5.0"
+  hashes = [
+    "h1:nCz6CV7LKlaIijxm1HRqei3AMKufD9eIzU70/WLIonY=",
+    "zh:0d95ed87398d5592e9c699f658eeef04e945945c996174222071c217e46f3c76",
+    "zh:57df331c814e3d7fa5b60807e9c742a62084a8330496b3ec00db94760f6411e1",
+    "zh:5c14b04b9b430383ac819bda73ce4291c8a677a894662adc71e409e8a0bf7ce7",
+    "zh:61958056bd163fa0dcb4af562df9974506ce1b2c95473b8fd48714ce599bb143",
+    "zh:6c5d33b170de17c0e045c30b973f265af02c8ad15d694d5337501592244c936c",
+    "zh:78687a24d88cc067fd81227e8f3dc6b3c7f13d9808e9c1da336e29722464e45b",
+    "zh:78d5eefdd9e494defcb3c68d282b8f96630502cac21d1ea161f53cfe9bb483b3",
+    "zh:9590a4bb4f333e34ad4fcac3efba5b3a8ba53120b3ff4e38948dd176726c2fc1",
+    "zh:9eafa5aa49699cecc338f8787e2ccf5a0e652500174ec5112f68f9e098c5c30a",
+    "zh:b8917751bb3e195657e284b28d07b8ca6d47889e7249b5fd84dd9c3abe5fa01b",
+    "zh:cc666a522256ad9a977c5a85e882e573a6422adf887cd21817a504c38ea19178",
+    "zh:ed2390933b029578583cf60517b783ea77ea644f33b525e0d5c037b992047070",
+  ]
+}
