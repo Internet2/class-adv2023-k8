@@ -1,0 +1,46 @@
+### Author: ktsoukalas@colgate.edu
+### Version: 1.0
+### Modified: April 14, 2023
+##
+#
+Packages needed are in the requirements.txt file. Create a virtual environment and install with
+pip install -r requirements.txt
+
+Packages are:
+azure-functions
+azure-mgmt-compute
+azure.common.credentials
+azure-identity
+python-dotenv
+
+To create an App Registration in Azure, you can follow these steps:
+    1   Sign in to the Azure portal (https://portal.azure.com/).
+    2   In the search bar write 'App registrations', then, click on "App Registrations" under the "Services" section.
+    3   Click on "+ New registration"
+    4   Enter App Registration details, then click on the "Register" button to create the App Registration.
+        In the "Register an application" blade, enter the following details for your App Registration:
+        Name: Enter a unique name for your application.
+        Supported account types: Choose the appropriate account types for your application ('Accounts in this organizational directory only')
+        Then, click on the "Register" button to create the App Registration.
+    5   Note down Application (client) ID and Directory (tenant) ID
+        After the App Registration is created, note down the "Application (client) ID" and "Directory (tenant) ID" values, as they will be required in the .env credentials file.
+    6   Create a Client Secret by clicking the "Certificates & secrets" section in the App Registration blade,
+        then click on the "New client secret" button. Enter a description, select an expiration duration, and click on the "Add" button. Make sure to note down the client secret value (the ID is not needed) as it will be required in the .env credentials file.
+
+Create the .env file and specify your Azure login credentials as noted in the App registration process. The file is included in .gitingore and a template is located at .env-template
+vim .env
+
+To authorize an app registration in Azure to perform the 'Microsoft.Compute/virtualMachines/*/action' actions, you need to grant the necessary permissions to the app registration at the appropriate scope. Here are the steps to do so:
+	1	Sign in to the Azure portal (https://portal.azure.com/).
+	2	Navigate to the resource group containing the virtual machine that you want to manage.
+	3	Click on the virtual machine name to open the virtual machine blade.
+	4	In the left-hand menu, click on 'Access control (IAM)'.
+	5	Click on the '+ Add' button to add a new role assignment.
+	6	In the 'Add role assignment' pane, select the 'Virtual Machine Contributor' or other appropriate role.
+	7	In the 'Assign access to' field, select 'User, group, or service principal'
+    8   Click on '+Select members' and search for the app registration name that you want to authorize.
+	9	In the 'Select' field, search for and select the name of an app registration.
+    10	Click on the 'Save' button to grant the permissions to the app registration.
+#
+##
+###
